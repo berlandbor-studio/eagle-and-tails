@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    
+    <title></title>
+    <style type="text/css" media="all">
+      body{
+        text-align: center;
+      }
+      
+      textarea{
+       
+       width:250px ;
+       height: 150px;
+       font-size: 18px; 
+       padding: 20% 0% 0% 20%;
+        
+      }
+      
+      button{
+        width: 150px;
+        height: 150px;
+        font-size: 30px;
+        background:#000000;
+        color:#ffffff;
+      }
+      #p1 {
+       font-size: 50px;
+        
+      }
+      strong{
+        
+        color:#1226d3 ;
+        
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+     <h1>Классическая игра "КИНЬ ЖРЕБИЙ"</h1>
+   
+    </header>
+    <section>
+<label for="">
+            
+Задайте вопрос Жребию и получите от него ответ. Для полноты ответа лучше всего бросать Жребий  3, 5 и 7 раз.
+
+</label>
+
+<hr />
+<h3> Введите ваш вопрос:</h3>
+<br />
+<textarea id="text"></textarea>
+<br>
+<hr />
+  <h3> Нажмите, чтобы кинуть Жребий:</h3> 
+   <button type="button" id = "btn">КИНЬ ЖРЕБИЙ</button>
+  <hr />
+  <h3> Ответ Жребия на ваш вопрос:</h3>
+    <p id = "p1"></p>
+  <hr />  
+ </section>
+ <footer>
+   <hr />
+     <p>Код игры основан на поцессорной функции  генератор случайных чисел.</p>
+ </footer>
+  </body>
+  <script type="text/javascript" charset="utf-8">
+  let btn = document.getElementById('btn');
+  btn.onclick = function (){
+  let randomNumber = Math.floor(Math.random()*3)+0;
+    console.log(randomNumber);
+ /* let mat_random = Math.random()+1;
+  console.log(mat_random);*/
+  if (randomNumber == 1) {
+let text = document.getElementById("text").value;
+
+/*let inText = document.getElementById("inText");
+    inText.innerHTML = text; */
+let yes = document.getElementById("p1");
+yes.innerHTML =`<hr />Вы:<br /> <strong> ${text}</strong> <hr /> Ответ Жребия: <br />👍`;
+
+  } else if (randomNumber == 0) {
+    
+let text = document.getElementById("text").value;
+
+let yes = document.getElementById("p1");
+ yes.innerHTML= `<hr />Вы:<br /> <strong> ${text}</strong> <hr /> Ответ Жребия: <br />👎`;
+    
+  } else {
+    
+let text = document.getElementById("text").value;
+
+let yes = document.getElementById("p1");
+yes.innerHTML= `<hr />Вы:<br /> <strong> ${text}</strong> <hr /> Ответ Жребия: <br />👉👈`;
+
+  }
+  }
+  </script>
+</html>
